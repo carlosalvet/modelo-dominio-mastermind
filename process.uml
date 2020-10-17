@@ -1,0 +1,28 @@
+@startuml
+
+start
+
+:mastermind;
+fork
+    :start;
+        fork
+            :set secret code;
+        end fork
+fork again
+    :play;
+        fork
+            :decode try;
+        fork again
+            :code-decode comparisión;
+        fork again
+            :set clues;
+        end fork
+fork again
+    :finish;
+        fork
+            :win (decode combination);
+        fork again
+            :lost (round > 10);
+        end fork
+end fork
+@enduml

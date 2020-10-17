@@ -1,0 +1,11 @@
+@startuml
+
+[*] --> set_secret_code : coder
+set_secret_code--> try_decode :decoder
+try_decode--> set_clues :fail decode
+set_clues--> try_decode : 10 rounds
+
+try_decode-->finish : rounds > 10 | decode combination
+finish-->[*]
+
+@enduml
