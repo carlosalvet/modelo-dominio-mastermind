@@ -32,5 +32,9 @@ PlayerCoder -- PlayZone : ¿is correct?
 PlayerCoder --> ClueZone : (set) clues codes
 CodePiece --> PlayZone : (set) decode codes 
 
+Rules *-- Score
+Rules *-- Turn
+Turn --> Player
+Score --> Player
 
 @enduml
