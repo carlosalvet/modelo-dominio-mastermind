@@ -11,13 +11,16 @@ Player <|-- PlayerDecoder
 Piece <|-- CluePiece
 Piece <|-- CodePiece
 
-Board *-- PlayZone
+Board *-- CodeZone
 Board *-- ClueZone
 Board *-- Shield 
 
-PlayZone *-- "10" Row
-ClueZone *-- "10" Row
-Row *-- "4" Slot
+CodeZone *-- "10" CodeRow
+ClueZone *-- "10" ClueRow
+CodeRow *-- "4" Slot
+ClueRow *-- "4" Slot
+CodeRow o-- "4" CodePiece
+ClueRow o-- "4" CluePiece
 
 Shield *-- "4" Slot
 
@@ -26,12 +29,13 @@ CluePiece <|-- Black : Death
 CluePiece <|-- White : Hurt
 
 CodePiece --> Shield : (set) color code
-PlayerDecoder --> PlayZone
-PlayerDecoder --> CodePieceZone
-PlayerCoder -- PlayZone : ¿is correct? 
+PlayerDecoder --> CodeZone
+PlayerCoder -- CodeZone : ¿is correct?
 PlayerCoder --> ClueZone : (set) clues codes
-CodePiece --> PlayZone : (set) decode codes 
+CodePiece --o CodeZone : (set) decode codes 
 
+PlayerCoder --> CluePiece
+PlayerDecoder --> CodePiece
 Rules *-- Score
 Rules *-- Turn
 Turn --> Player
