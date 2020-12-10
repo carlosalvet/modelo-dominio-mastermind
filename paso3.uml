@@ -1,0 +1,10 @@
+Paso 3: Jugador 1 mira la combinación propuesta por Jugador 2 y genera la combinación de pistas relacionada con los aciertos de combinación propuesta con respecto a combinación secreta y las agrega en el área de pistas correspondiente al intento 1.
+
+@startuml
+
+Jugador1 ..> CombinaciónPropuesta:observar
+Jugador1 ..> CombinaciónSecreta:observar
+Jugador1 --> "4"CombinaciónPista:crear
+AreaPista *-- CombinaciónPista
+
+@enduml

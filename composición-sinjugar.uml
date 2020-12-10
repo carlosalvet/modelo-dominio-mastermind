@@ -1,0 +1,30 @@
+@startuml
+
+Mastermind *-- "*" Pieza
+Mastermind *-- Tablero
+
+Pieza <|-- PiezaPista
+Pieza <|-- PiezaCombinación
+
+Negro <|-- PiezaPista
+Blanco <|-- PiezaPista
+
+ColoresVarios <|-- PiezaCombinación
+
+Tablero *--> ZonaPistas
+Tablero *--> ZonaCombinacionesPropuestas
+Tablero *--> Escudo
+
+ZonaPistas *-- "10" AreaPista
+AreaPista *-- "4" Hueco
+
+ZonaCombinacionesPropuestas *-- "10" AreaCombinaciónPropuesta
+AreaCombinaciónPropuesta *-- "4" Hueco
+Escudo *-- AreaCombinaciónSecreta
+AreaCombinaciónSecreta *-- "4" Hueco
+
+PiezaCombinación -- AreaCombinaciónPropuesta
+PiezaPista -- AreaPista
+
+
+@enduml

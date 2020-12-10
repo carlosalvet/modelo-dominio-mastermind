@@ -1,0 +1,8 @@
+@startuml
+
+AreaCombinaciónSecreta *-- "4" Hueco
+
+Jugador1 --> Combinación:Propone
+AreaCombinaciónSecreta o-- Combinación
+
+@enduml

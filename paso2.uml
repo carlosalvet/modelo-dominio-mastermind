@@ -1,0 +1,13 @@
+Jugador 2 propone una combinación y la agrega al area de combinaciones propuestas relacionada con el numero de intento (intento1).
+
+@startuml
+
+Jugador2 ..> CombinaciónPropuesta:Proponer
+Jugador2 *-- "10" Intento
+CombinaciónPropuesta *-- "4" PiezaCombinación
+Intento -- AreaCombinaciónPropuesta
+AreaCombinaciónPropuesta *-- CombinaciónPropuesta
+
+@enduml
+
+
